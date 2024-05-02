@@ -17,6 +17,11 @@
 #hero-container #dollar-img {
   width: 25vw;
 }
+@media screen and (max-width: 1400px) {
+  #hero-container #dollar-img {
+    width: 50vw;
+  }
+}
 #hero-container #switch-btn {
   display: flex;
   justify-content: center;
@@ -56,9 +61,20 @@
   background: #fff;
   box-shadow: 2px 2px 7px 5px black;
   width: 25vw;
-  height: 106px;
+  height: 150px;
   text-align: center;
   margin-bottom: 5px;
+}
+@media screen and (max-width: 1400px) {
+  #hero-container #valute-containers .valute-container {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 1226px) {
+  #hero-container #valute-containers .valute-container {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 #hero-container #valute-containers .valute-container:hover {
   background: rgb(59, 101, 114);
@@ -115,14 +131,29 @@
   align-items: center;
   gap: 50px;
 }
+@media screen and (max-width: 768px) {
+  #hero-container #input-value-container {
+    flex-direction: column;
+  }
+}
 #hero-container #input-value-container input {
   width: 25vw;
-  height: 50px;
+  height: 100px;
   box-shadow: 2px 2px 2px 2px black;
   background: rgb(240, 238, 238);
-  padding: 10px;
+  padding: 30px;
   font-size: 30px;
   font-weight: bolder;
+}
+@media screen and (max-width: 1400px) {
+  #hero-container #input-value-container input {
+    height: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #hero-container #input-value-container input {
+    width: 70vw;
+  }
 }
 #hero-container #input-value-container input:hover {
   background: rgb(222, 206, 206);
@@ -137,6 +168,12 @@
   cursor: pointer;
   border-radius: 20px;
   transition: all 1s ease;
+}
+@media screen and (max-width: 768px) {
+  #hero-container #btn-container {
+    flex-direction: column;
+    width: 70vw;
+  }
 }
 #hero-container #btn-container:hover {
   background: rgb(59, 101, 114);

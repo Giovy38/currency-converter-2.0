@@ -1,0 +1,18 @@
+@mixin tablet {
+    @media screen and (max-width: 768px){
+        @content 
+    }
+};
+
+@mixin intermediate {
+    @media screen and (max-width: 1226px){
+        @content 
+    }
+};
+
+@mixin intermediate-big{
+    @media screen and (max-width: 1400px){
+        @content
+    }
+};
+
