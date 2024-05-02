@@ -7,6 +7,7 @@ const leftInput = document.getElementById("left-input");
 const rightInput = document.getElementById("right-input");
 const switchBtn = document.getElementById("switch-btn");
 const apiError = document.getElementById("api-error-text");
+const shortcut = document.getElementById("shortcut");
 
 // -------------------------------- CREATEVALUE WHEN PAGE LOAD ------------------------------
 window.addEventListener("load", onLoad);
@@ -198,4 +199,13 @@ function onSwitch() {
 
   rightCurrentCurrency.children[1].innerHTML = smallValue;
   rightCurrentCurrency.children[2].innerHTML = fullValue;
+}
+
+// ----------- ADDED SHORTCUT --------------------------------
+
+shortcut.addEventListener("click", onShortcut);
+
+function onShortcut(e) {
+  // console.log(e.target.textContent);
+  leftInput.value = e.target.textContent;
 }
