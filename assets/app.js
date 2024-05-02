@@ -6,6 +6,7 @@ const rightCurrentCurrency = document.getElementById("right-current-currency");
 const leftInput = document.getElementById("left-input");
 const rightInput = document.getElementById("right-input");
 const switchBtn = document.getElementById("switch-btn");
+const apiError = document.getElementById("api-error-text");
 
 // -------------------------------- CREATEVALUE WHEN PAGE LOAD ------------------------------
 window.addEventListener("load", onLoad);
@@ -67,12 +68,24 @@ async function onLoad() {
 // show left currencies when click on the icon
 
 const leftIcon = document.getElementById("show-left-icon");
+const leftHiddenIcon = document.getElementById("hidden-left-icon");
 leftIcon.addEventListener("click", showLeftCurrencies);
+leftHiddenIcon.addEventListener("click", showIconLeft);
+
+function showIconLeft() {
+  leftIcon.style.display = "inline";
+  leftHiddenIcon.style.display = "none";
+
+  const leftHidden = document.querySelectorAll(".hidden-container-left");
+  leftHidden.forEach((hidden) => hidden.classList.add("hidden-container"));
+}
 
 function showLeftCurrencies() {
   const leftCurrencies = document.querySelectorAll(".hidden-container-left");
   leftCurrencies.forEach((currency) => {
     currency.classList.remove("hidden-container");
+    leftIcon.style.display = "none";
+    leftHiddenIcon.style.display = "inline";
     currency.addEventListener("click", selectCurrency);
 
     function selectCurrency(e) {
@@ -90,6 +103,8 @@ function showLeftCurrencies() {
 
       const leftHidden = document.querySelectorAll(".hidden-container-left");
       leftHidden.forEach((hidden) => hidden.classList.add("hidden-container"));
+      leftIcon.style.display = "inline";
+      leftHiddenIcon.style.display = "none";
     }
   });
 }
@@ -97,12 +112,24 @@ function showLeftCurrencies() {
 // show right currencier when click on the icon
 
 const rightIcon = document.getElementById("show-right-icon");
+const rightHiddenIcon = document.getElementById("hidden-right-icon");
 rightIcon.addEventListener("click", showRightCurrencies);
+rightHiddenIcon.addEventListener("click", showIconRight);
+
+function showIconRight() {
+  rightIcon.style.display = "inline";
+  rightHiddenIcon.style.display = "none";
+
+  const rightHidden = document.querySelectorAll(".hidden-container-right");
+  rightHidden.forEach((hidden) => hidden.classList.add("hidden-container"));
+}
 
 function showRightCurrencies() {
   const rightCurrencies = document.querySelectorAll(".hidden-container-right");
   rightCurrencies.forEach((currency) => {
     currency.classList.remove("hidden-container");
+    rightIcon.style.display = "none";
+    rightHiddenIcon.style.display = "inline";
     currency.addEventListener("click", selectCurrency);
 
     function selectCurrency(e) {
@@ -120,6 +147,8 @@ function showRightCurrencies() {
 
       const rightHidden = document.querySelectorAll(".hidden-container-right");
       rightHidden.forEach((hidden) => hidden.classList.add("hidden-container"));
+      rightIcon.style.display = "inline";
+      rightHiddenIcon.style.display = "none";
     }
   });
 }
@@ -129,24 +158,32 @@ const btn = document.getElementById("btn-container");
 btn.addEventListener("click", onConvert);
 
 async function onConvert() {
-  try {
-    const host = "api.frankfurter.app";
-    const amount = leftInput.value;
-    const from = leftCurrentCurrency.children[1].innerHTML;
-    const to = rightCurrentCurrency.children[1].innerHTML;
+  const host = "api.frankfurter.app";
+  const amount = leftInput.value;
+  const from = leftCurrentCurrency.children[1].innerHTML;
+  const to = rightCurrentCurrency.children[1].innerHTML;
 
-    const res = await fetch(
-      `https://${host}/latest?amount=${amount}&from=${from}&to=${to}`
-    );
-    const data = await res.json();
-    rightInput.value = data.rates[to];
-    // console.log(rightInput.value);
-  } catch {
-    alert(`Errore nel caricamento dell'API`);
+  if (from !== to) {
+    apiError.style.display = "none";
+
+    try {
+      const res = await fetch(
+        `https://${host}/latest?amount=${amount}&from=${from}&to=${to}`
+      );
+      const data = await res.json();
+      rightInput.value = data.rates[to];
+      // console.log(rightInput.value);
+    } catch {
+      alert(`Errore nel caricamento dell'API`);
+    }
+  } else {
+    apiError.textContent =
+      "Non puoi convertire nella stessa valuta, selezionane 2 differenti";
+    apiError.style.display = "inline";
   }
 }
 
-// ------------------- IMPLEMENT SWITH BTN ----------------
+// ------------------- IMPLEMENT SWITCH BTN ----------------
 
 switchBtn.addEventListener("click", onSwitch);
 
