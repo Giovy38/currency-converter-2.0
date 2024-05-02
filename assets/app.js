@@ -199,6 +199,9 @@ function onSwitch() {
 
   rightCurrentCurrency.children[1].innerHTML = smallValue;
   rightCurrentCurrency.children[2].innerHTML = fullValue;
+
+  leftInput.value = 1;
+  rightInput.value = "";
 }
 
 // ----------- ADDED SHORTCUT --------------------------------
@@ -206,6 +209,5 @@ function onSwitch() {
 shortcut.addEventListener("click", onShortcut);
 
 function onShortcut(e) {
-  // console.log(e.target.textContent);
   leftInput.value = e.target.textContent;
 }
