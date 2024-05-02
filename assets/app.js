@@ -5,6 +5,7 @@ const leftCurrentCurrency = document.getElementById("left-current-currency");
 const rightCurrentCurrency = document.getElementById("right-current-currency");
 const leftInput = document.getElementById("left-input");
 const rightInput = document.getElementById("right-input");
+const switchBtn = document.getElementById("switch-btn");
 
 // -------------------------------- CREATEVALUE WHEN PAGE LOAD ------------------------------
 window.addEventListener("load", onLoad);
@@ -143,4 +144,21 @@ async function onConvert() {
   } catch {
     alert(`Errore nel caricamento dell'API`);
   }
+}
+
+// ------------------- IMPLEMENT SWITH BTN ----------------
+
+switchBtn.addEventListener("click", onSwitch);
+
+function onSwitch() {
+  const smallValue = leftCurrentCurrency.children[1].innerHTML;
+  const fullValue = leftCurrentCurrency.children[2].innerHTML;
+
+  leftCurrentCurrency.children[1].innerHTML =
+    rightCurrentCurrency.children[1].innerHTML;
+  leftCurrentCurrency.children[2].innerHTML =
+    rightCurrentCurrency.children[2].innerHTML;
+
+  rightCurrentCurrency.children[1].innerHTML = smallValue;
+  rightCurrentCurrency.children[2].innerHTML = fullValue;
 }

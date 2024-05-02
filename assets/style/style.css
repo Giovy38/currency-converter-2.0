@@ -17,6 +17,22 @@
 #hero-container #dollar-img {
   width: 25vw;
 }
+#hero-container #switch-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+#hero-container #switch-btn #switch-img-btn {
+  width: 150px;
+  border-radius: 100%;
+  border: 2px solid white;
+  box-shadow: 2px 2px 7px 5px black;
+}
+#hero-container #switch-btn .arrow-switch {
+  width: 50px;
+}
 #hero-container #valute-containers {
   display: flex;
   align-items: flex-start;

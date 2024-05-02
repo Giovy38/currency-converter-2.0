@@ -19,6 +19,25 @@
         width: 25vw;
     }
 
+    #switch-btn{
+
+        @include flexCenter;
+        gap: 20px;
+        cursor: pointer;
+
+
+        #switch-img-btn{
+            width: 150px;
+            border-radius: 100%;
+            border: 2px solid white;
+            @include shadow;
+        }
+
+        .arrow-switch{
+            width: 50px;
+        }
+    }
+
     #valute-containers{
 
         display: flex;
