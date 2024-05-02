@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <!-- import boxicon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- end import -->
+    <title>Currency Converter</title>
+  </head>
+  <body>
+    <!-- hero container -->
+    <div id="hero-container">
+      <!-- main img -->
+      <img id="dollar-img" src="./assets/img/dollar.jpeg" alt="world-map" />
+
+      <!-- container for valute -->
+
+      <div id="valute-containers">
+        <!-- left container -->
+        <div id="valute-container-left">
+          <!-- create a single container -->
+          <div
+            id="left-current-currency"
+            class="single-container-left valute-container"
+          >
+            <img
+              class="valute-img"
+              src="./assets/img/empty dollar.jpeg"
+              alt=""
+            />
+            <h3 class="left-small-value">EUR</h3>
+            <h3 class="left-full-value">Euro</h3>
+            <i id="show-left-icon" class="bx bx-chevron-down icon"></i>
+          </div>
+        </div>
+
+        <!-- right container -->
+
+        <div id="valute-container-right">
+          <!-- cerate single container -->
+          <div
+            id="right-current-currency"
+            class="single-container-right valute-container"
+          >
+            <img class="valute-img" src="./assets/img/dollar.jpeg" alt="" />
+            <h3 class="left-small-value">USD</h3>
+            <h3 class="left-full-value">Us Dollar</h3>
+            <i id="show-right-icon" class="bx bx-chevron-down icon"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- input value container -->
+
+      <div id="input-value-container">
+        <div class="input-value-container-left input-value-container">
+          <input id="left-input" type="text" value="1" />
+        </div>
+
+        <div class="input-value-container-right input-value-container">
+          <input id="right-input" type="text" readonly />
+        </div>
+      </div>
+
+      <!-- btn container -->
+
+      <div id="btn-container">
+        <img class="converter-img" src="/assets/img/mooney.png" alt="convert" />
+        <h3 class="converter-text">Convert</h3>
+      </div>
+    </div>
+
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

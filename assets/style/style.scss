@@ -1,0 +1,123 @@
+@import './utilies';
+@import './colors';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#hero-container{
+    @include flexCenter;
+    flex-direction: column;
+    gap: 30px;
+    padding: 15px;
+    background: $main-color;
+    min-height: 100vh;
+
+    #dollar-img{
+        width: 25vw;
+    }
+
+    #valute-containers{
+
+        display: flex;
+        align-items: flex-start;
+        padding: 20px;
+        @include flexCenter;
+        gap: 50px;
+
+        .valute-container{
+            @include flexCenter;
+            gap: 30px;
+            padding: 20px 50px ;
+            background: $valute-container-bg;
+            @include shadow;
+            width: 20vw;
+            height: 106px;
+            text-align: center;
+            margin-bottom: 5px;
+            cursor: pointer;
+
+            &:hover{
+                background: $valute-container-bg-hover;
+                color: $valute-container-text-hover;
+            }
+
+            .valute-img{
+                width: 8vw;
+                height: 3vw;
+                border-radius: 10px;
+            }
+
+            .icon{
+                cursor: pointer;
+            }
+        }
+
+        #valute-container-left{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #valute-container-right{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .hidden-container{
+            display: none;
+        }
+    }
+
+
+    // input value container
+
+    #input-value-container{
+        padding: 20px;
+        @include flexCenter;
+        gap: 50px;
+
+        input{
+            width: 20vw;
+            height: 50px;
+            box-shadow: 2px 2px 2px 2px black;
+            background: $input-bg;
+            padding: 10px;
+            font-size: 30px;
+            font-weight: bolder;
+
+            &:hover{
+                background: $input-bg-hover;
+            }
+        }
+    }
+
+    #btn-container{
+        @include flexCenter;
+        @include shadow;
+        background: $btn-container-bg;
+        padding: 10px 20px 10px 20px;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 1s ease;
+
+        &:hover{
+            background: $btn-container-bg-hover;
+            border-radius: 50px;
+        }
+
+
+        .converter-img{
+            width: 150px;
+        }
+
+        .converter-text{
+            color: white;
+            font-weight:bold;
+            font-size: 40px;
+        }
+    }
+}

@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 15px;
+  background: rgb(62, 81, 88);
+  min-height: 100vh;
+}
+#hero-container #dollar-img {
+  width: 25vw;
+}
+#hero-container #valute-containers {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+#hero-container #valute-containers .valute-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 50px;
+  background: #fff;
+  box-shadow: 2px 2px 7px 5px black;
+  width: 20vw;
+  height: 106px;
+  text-align: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+#hero-container #valute-containers .valute-container:hover {
+  background: rgb(59, 101, 114);
+  color: #fff;
+}
+#hero-container #valute-containers .valute-container .valute-img {
+  width: 8vw;
+  height: 3vw;
+  border-radius: 10px;
+}
+#hero-container #valute-containers .valute-container .icon {
+  cursor: pointer;
+}
+#hero-container #valute-containers #valute-container-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#hero-container #valute-containers #valute-container-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#hero-container #valute-containers .hidden-container {
+  display: none;
+}
+#hero-container #input-value-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+#hero-container #input-value-container input {
+  width: 20vw;
+  height: 50px;
+  box-shadow: 2px 2px 2px 2px black;
+  background: rgb(240, 238, 238);
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+#hero-container #input-value-container input:hover {
+  background: rgb(222, 206, 206);
+}
+#hero-container #btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 7px 5px black;
+  background: rgb(45, 78, 88);
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 1s ease;
+}
+#hero-container #btn-container:hover {
+  background: rgb(59, 101, 114);
+  border-radius: 50px;
+}
+#hero-container #btn-container .converter-img {
+  width: 150px;
+}
+#hero-container #btn-container .converter-text {
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}/*# sourceMappingURL=style.css.map */
