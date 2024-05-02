@@ -45,6 +45,17 @@
   padding: 10px 15px;
   border-radius: 30px;
   display: none;
+  max-width: 90vw;
+}
+@media screen and (max-width: 1400px) {
+  #hero-container #api-error-text {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  #hero-container #api-error-text {
+    font-size: 20px;
+  }
 }
 #hero-container #valute-containers {
   display: flex;
