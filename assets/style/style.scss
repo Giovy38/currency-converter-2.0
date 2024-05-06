@@ -30,17 +30,23 @@
         gap: 20px;
         cursor: pointer;
 
+        &:hover{
+            transform: scale(1.2);
+        }
+
 
         #switch-img-btn{
-            width: 150px;
+            width: 100px;
             border-radius: 100%;
             border: 2px solid white;
             @include shadow;
         }
 
         .arrow-switch{
-            width: 50px;
+            width: 25px;
         }
+
+       
     }
 
     #api-error-text{
@@ -92,10 +98,10 @@
             }
             
 
-            &:hover{
-                background: $valute-container-bg-hover;
-                color: $valute-container-text-hover;
-            }
+            // &:hover{
+            //     background: $valute-container-bg-hover;
+            //     color: $valute-container-text-hover;
+            // }
 
             .valute-img{
                 width: 8vw;
@@ -141,6 +147,7 @@
 
             &:hover{
                 background: $valute-subcontainer-bg-hover;
+                color: $valute-container-text-hover;             
             }
         }
 
@@ -149,6 +156,8 @@
 
             &:hover{
                 background: $valute-subcontainer-bg-hover;
+                color: $valute-container-text-hover;             
+
             }
         }
 
@@ -226,7 +235,7 @@
         padding: 10px 20px 10px 20px;
         cursor: pointer;
         border-radius: 20px;
-        transition: all 1s ease;
+        transition: background 1s ease, border-radius 1s ease;
 
         @include tablet{
             flex-direction: column;

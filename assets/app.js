@@ -106,6 +106,8 @@ function showLeftCurrencies() {
       leftHidden.forEach((hidden) => hidden.classList.add("hidden-container"));
       leftIcon.style.display = "inline";
       leftHiddenIcon.style.display = "none";
+
+      onConvert();
     }
   });
 }
@@ -150,6 +152,8 @@ function showRightCurrencies() {
       rightHidden.forEach((hidden) => hidden.classList.add("hidden-container"));
       rightIcon.style.display = "inline";
       rightHiddenIcon.style.display = "none";
+
+      onConvert();
     }
   });
 }
@@ -209,5 +213,7 @@ function onSwitch() {
 shortcut.addEventListener("click", onShortcut);
 
 function onShortcut(e) {
-  leftInput.value = e.target.textContent;
+  if (e.target.classList.contains("single-shortcut")) {
+    leftInput.value = e.target.textContent;
+  }
 }
